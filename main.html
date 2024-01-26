@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <form method="post" onsubmit="validateForm()">
+        <label for="num">Mot de passe :</label>
+        <div id="num">
+            <input class="inputNum" id="input1" name="num" type="text" pattern="[0-9]{1}" required>
+            <input class="inputNum" id="input2" name="num" type="text" pattern="[0-9]{1}" required>
+            <input class="inputNum" id="input3" name="num" type="text" pattern="[0-9]{1}" required>
+            <input type="submit" value="Valider" style="border-radius: 5px; background-color: green;">
+        </div>
+    </form>
+    <script>
+        function validateForm() {
+            let UserInput1 = document.getElementById('input1').value;
+            let UserInput2 = document.getElementById('input2').value;
+            let UserInput3 = document.getElementById('input3').value;
+            let UserInputTotal = UserInput1 + UserInput2 + UserInput3;
+
+            // Utilisation de parseInt pour s'assurer que les valeurs sont traitées comme des nombres
+            switch (parseInt(UserInputTotal)) {
+                case 394:
+                    alert("Tu as trouvé le mot de passe !");
+                    break;
+                default:
+                    alert("Tu t'es trompé de mot de passe.");
+            }
+        }
+    </script>
+</body>
+
+<footer>
+    <!-- <script src="./src/script/script.js"></script> -->
+</footer>
+
+</html>
